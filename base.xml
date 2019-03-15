@@ -11,6 +11,557 @@
 	<ActionPackage/>
 	<ScriptPackage>
 -- Script here
+				<Script isActive="yes" isFolder="no">
+			<name>Defence Tables</name>
+			<packageName></packageName>
+			<script>wsys.def = wsys.def or {}
+
+wsys.tb.defenceTable = {
+  ["acrobatics"] = {["name"] = "Acrobatics", ["skillset"] = {"pranks", "swashbuckling"},},
+  ["affinity"] = {["name"] = "Affinity", ["skillset"] = {"metamorphosis"}, ["manualcommand"] = "embrace spirit",},
+  ["alertness"] = {["name"] = "Alertness", ["skillset"] = {"vision"},},
+  ["aria"] = {["name"] = "Aria", ["skillset"] = {"voicecraft"},},
+  ["arrowcatching"] = {["name"] = "Arrowcatching", ["skillset"] = {"pranks", "swashbuckling"},},
+  ["astralform"] = {["name"] = "Astralform", ["skillset"] = {"occultism"},},
+  ["astralvision"] = {["name"] = "Astralvision", ["skillset"] = {"occultism"}, ["manualcommand"] = "astralvision",},
+  ["astronomy"] = {["name"] = "Astronomy", ["skillset"] = {"alchemy"},},
+  ["balancing"] = {["name"] = "Balancing", ["skillset"] = {"pranks", "swashbuckling"},},
+  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = wsys.manualbarkskin(),},
+  --["basking"] = {["name"] = "Basking", ["skillset"] = {"subterfuge"},},
+  ["bedevilaura"] = {["name"] = "Bedevil Aura", ["skillset"] = {"healing"},},
+  ["belltattoo"] = {["name"] = "Bell Tattoo", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch bell",},
+  ["blackwind"] = {["name"] = "Blackwind", ["skillset"] = {"necromancy"},},
+  ["blademastery"] = {["name"] = "Mastery", ["skillset"] = {"weaponmastery"},},
+  ["blindness"] = {["name"] = "Blindness", ["skillset"] = {"curative"},},
+  ["bodyblock"] = {["name"] = "Bodyblock", ["skillset"] = {"tekura"},},
+  ["boostedregeneration"] = {["name"] = "Boosting", ["skillset"] = {"kaido"},},
+  ["chargeshield"] = {["name"] = "Chargeshield", ["skillset"] = {"elementalism"},},
+  ["clinging"] = {["name"] = "Clinging", ["skillset"] = {"survival"},},
+  ["cloak"] = {["name"] = "Cloak", ["skillset"] = {"tattoos"},},
+  ["coldresist"] = {["name"] = "Coldresist", ["skillset"] = {"enchantment"},},
+  ["cohesion"] = {["name"] = "Cohesion", ["skillset"] = {"pervasion"},},
+  ["consciousness"] = {["name"] = "Consciousness", ["skillset"] = {"kaido", "shindo"},},
+  ["constitution"] = {["name"] = "Constitution", ["skillset"] = {"kaido", "striking"},},
+  ["curseward"] = {["name"] = "Curseward", ["skillset"] = {"survival"},},
+  ["deflect"] = {["name"] = "Deflect", ["skillset"] = {"weaponmastery"}, ["manualcommand"] = "deflect",},
+  ["deafness"] = {["name"] = "Deafness", ["skillset"] = {"curative"},},
+  ["deathaura"] = {["name"] = "Deathaura", ["skillset"] = {"necromancy"},},
+  ["deathsight"] = {["name"] = "Deathsight", ["skillset"] = {"vision", "necromancy"}, ["manualcommand"] = wsys.manualdeathsight(),},
+  ["demonarmour"] = {["name"] = "Demon armour", ["skillset"] = {"apostasy"},},
+  --["demonfury"] = {["name"] = "Demon fury", ["skillset"] = {"apostasy"},},
+  ["density"] = {["name"] = "Mass/Density", ["skillset"] = {"curative"},},
+  ["devilmark"] = {["name"] = "Devilmark", ["skillset"] = {"occultism"},},
+  ["diamondskin"] = {["name"] = "Diamondskin", ["skillset"] = {"magi"},},
+  ["distortedaura"] = {["name"] = "Distortaura", ["skillset"] = {"occultism"},},
+  ["dodging"] = {["name"] = "Dodging", ["skillset"] = {"shindo", "kaido"},},
+  ["dragonarmour"] = {["name"] = "Dragonarmour", ["skillset"] = {"dragoncraft"},},
+  ["dragonbreath"] = {["name"] = "Dragonbreath", ["skillset"] = {"dragoncraft"},},
+  ["drunkensailor"] = {["name"] = "Drunkensailor", ["skillset"] = {"swashbuckling"},},
+  ["earthshield"] = {["name"] = "Earthshield", ["skillset"] = {"healing"},},
+  ["electricresist"] = {["name"] = "Electric resistance", ["skillset"] = {"enchantment"},},
+  ["elusiveness"] = {["name"] = "Elusiveness", ["skillset"] = {"metamorphosis"}, ["manualcommand"] = "elusiveness on",},
+  ["enduranceblessing"] = {["name"] = "Endurance", ["skillset"] = {"healing"},},
+  --["eavesdropping"] = {["name"] = "Eavesdropping", ["skillset"] = {"subterfuge"},},
+  ["evadeblock"] = {["name"] = "Evadeblock", ["skillset"] = {"tekura"},},
+  ["evasion"] = {["name"] = "Evasion", ["skillset"] = {"metamorphosis"},},
+  --["extispicy"] = {["name"] = "Extispicy", ["skillset"] = {"alchemy"},},
+  ["extrusion"] = {["name"] = "Extrusion", ["skillset"] = {"sculpting"},},
+  ["fangbarrier"] = {["name"] = "Sileris", ["skillset"] = {"curative"},},
+  ["firefly"] = {["name"] = "Firefly", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch firefly",},
+  ["fireresist"] = {["name"] = "fireresist", ["skillset"] = {"enchantment"},},
+  ["fireshroud"] = {["name"] = "Fireshroud", ["skillset"] = {"ignition"},}, 
+  ["firstaid"] = {["name"] = "Firstaid", ["skillset"] = {"woodlore"},},
+  ["flailingstaff"] = {["name"] = "Flailingstaff", ["skillset"] = {"groves"},},
+  ["fleetness"] = {["name"] = "Fleetness", ["skillset"] = {"woodlore"}, ["manualcommand"] = "fleetness",},
+  --["frenzied"] = {["name"] = "Frenzy", ["skillset"] = {"necromancy"},},
+  ["frostshield"] = {["name"] = "Frostshield", ["skillset"] = {"healing"},},
+  ["fury"] = {["name"] = "Fury", ["skillset"] = {"chivalry"},},
+  ["ghost"] = {["name"] = "Ghost", ["skillset"] = {"subterfuge"},},
+  ["golgothagrace"] = {["name"] = "Golgotha", ["skillset"] = {"domination"},},
+  ["gripping"] = {["name"] = "Gripping", ["skillset"] = {"chivalry", "twoarts", "puppetry", "vodun", "swashbuckling"},},
+  ["groundwatch"] = {["name"] = "Groundwatch", ["skillset"] = {"vision"},},
+  ["guidedstrike"] = {["name"] = "Guidedstrike", ["skillset"] = {"emulation"},},
+  ["heartsfury"] = {["name"] = "HeartsFury", ["skillset"] = {"swashbuckling"},},
+  ["harmony"] = {["name"] = "Harmony", ["skillset"] = {"druid"},},
+  ["heldbreath"] = {["name"] = "Hold Breath", ["skillset"] = {"survival"},},
+  ["heresy"] = {["name"] = "Heresy", ["skillset"] = {"spirituality"},},
+  ["hiding"] = {["name"] = "Hiding", ["skillset"] = {"subterfuge", "woodlore"},},
+  ["hypersense"] = {["name"] = "Hypersense", ["skillset"] = {"telepathy"},},
+  ["hypersight"] = {["name"] = "Hypersight", ["skillset"] = {"vision"},},
+  ["immunity"] = {["name"] = "Immunity", ["skillset"] = {"shindo", "kaido"},},
+  ["indomitability"] = {["name"] = "Indomitability", ["skillset"] = {"emulation"},},
+  ["insomnia"] = {["name"] = "Insomnia", ["skillset"] = {"survival"},},
+  ["inspiration"] = {["name"] = "Inspiration", ["skillset"] = {"devotion"},},
+  ["insulation"] = {["name"] = "Caloric", ["skillset"] = {"curative"},},
+  ["kaiboost"] = {["name"] = "Kaiboost", ["skillset"] = {"kaido"},},
+  ["kaitrance"] = {["name"] = "Kai trance", ["skillset"] = {"kaido"},},
+  ["kola"] = {["name"] = "Kola", ["skillset"] = {"curative"},},
+  ["lay"] = {["name"] = "Lay", ["skillset"] = {"voicecraft"},},
+  ["levitating"] = {["name"] = "Levitating", ["skillset"] = {"curative"},},
+  ["lifevision"] = {["name"] = "Lifevision", ["skillset"] = {"necromancy", "artefact"},},
+  ["lifegiver"] = {["name"] = "Lifegiver", ["skillset"] = {"relic"},},
+  ["lipreading"] = {["name"] = "Lipreading", ["skillset"] = {"subterfuge"},},
+  ["magicresist"] = {["name"] = "Magic resistance", ["skillset"] = {"enchantment"},},
+  ["mercury"] = {["name"] = "Mercury", ["skillset"] = {"alchemy"},},
+  ["metawake"] = {["name"] = "Metawake", ["skillset"] = {"survival"},},
+  ["mindcloak"] = {["name"] = "Mindcloak", ["skillset"] = {"telepathy"},},
+  ["mindnet"] = {["name"] = "Mindnet", ["skillset"] = {"shindo","telepathy"},},
+  ["mindseye"] = {["name"] = "Mindseye", ["skillset"] = {"tattoos"},},
+  ["mindtelesense"] = {["name"] = "Mind Telesense", ["skillset"] = {"telepathy"},},
+  ["mounted"] = {["name"] = "Mounted", ["skillset"] = {"riding"},},
+  ["nightsight"] = {["name"] = "Nightsight", ["skillset"] = {"vision"},},
+  --["numbness"] = {["name"] = "Numbness", ["skillset"] = {"kaido"},}, --apostasy Apathy maybe
+  ["pacing"] = {["name"] = "Pacing", ["skillset"] = {"subterfuge"},},
+  ["panacea"] = {["name"] = "Panacea", ["skillset"] = {"groves"},},
+  ["phased"] = {["name"] = "Phase", ["skillset"] = {"subterfuge"}, ["manualcommand"] = "phase",},
+  ["pinchblock"] = {["name"] = "Pinchblock", ["skillset"] = {"tekura"},},
+  ["poisonresist"] = {["name"] = "Poison resistance", ["skillset"] = {"curative"},},
+  --["prismatic"] = {["name"] = "Lyre", ["skillset"] = {"artefact"},},
+  ["projectiles"] = {["name"] = "Projectiles", ["skillset"] = {"shindo", "kaido"},},
+  ["putrefaction"] = {["name"] = "Putrefaction", ["skillset"] = {"necromancy"},},
+  ["psicomprehend"] = {["name"] = "Comprehension", ["skillset"] = {"psionics"},},
+  ["psitranscend"] = {["name"] = "Transcendence", ["skillset"] = {"psionics"},},
+  ["rebounding"] = {["name"] = "Rebounding", ["skillset"] = {"curative"},},
+  ["reflections"] = {["name"] = "Reflections", ["skillset"] = {"elementalism"},},
+  --["reflexes"] = {["name"] = "Reflexes", ["skillset"] = {"metamorphosis"},},
+  ["regeneration"] = {["name"] = "Regeneration", ["skillset"] = {"kaido"},},
+  ["resistance"] = {["name"] = "Resistance", ["skillset"] = {"kaido", "chivalry", "metamorphosis"},},
+  ["retaliation"] = {["name"] = "Retaliation", ["skillset"] = {"twoarts"},},
+  ["scales"] = {["name"] = "Scales", ["skillset"] = {"subterfuge"},},
+ -- ["scholasticism"] = {["name"] = "Myrrh", ["skillset"] = {"curative"}, ["manualcommand"] = wsys.manualmyrrh(),},
+  ["secondsight"] = {["name"] = "Secondsight", ["skillset"] = {"subterfuge"},},
+  ["secondskin"] = {["name"] = "Secondskin", ["skillset"] = {"weaving"},},
+  ["selfishness"] = {["name"] = "Selfishness", ["skillset"] = {"survival"},},
+  --["setweapon"] = {["name"] = "Impale", ["skillset"] = {"woodlore"},},
+  ["shield"] = {["name"] = "Shield", ["skillset"] = {"tattoos"},},
+  ["shinbinding"] = {["name"] = "Shinbinding", ["skillset"] = {"shindo"},},
+  ["shinclarity"] = {["name"] = "Clarity", ["skillset"] = {"shindo"},},
+  ["shintrance"] = {["name"] = "Shin Trance", ["skillset"] = {"shindo"},},
+  ["shroud"] = {["name"] = "Shroud", ["skillset"] = {"occultism", "necromancy", "subterfuge", "artefact"},},
+  ["skysight"] = {["name"] = "Skysight", ["skillset"] = {"duress"},},
+  ["softfocusing"] = {["name"] = "Softfocus", ["skillset"] = {"vision"},},
+  ["songbird"] = {["name"] = "Songbird", ["skillset"] = {"voicecraft"},},
+  ["soulcage"] = {["name"] = "Soulcage", ["skillset"] = {"necromancy"},},
+  ["slippery"] = {["name"] = "Slipperiness", ["skillset"] = {"pranks"},},
+  ["speed"] = {["name"] = "Speed", ["skillset"] = {"curative"},},
+  --["spinning"] = {["name"] = "Spinning", ["skillset"] = {"woodlore"},},
+  --["spinningstaff"] = {["name"] = "Spinningstaff", ["skillset"] = {"groves"},},
+  ["spiritbonded"] = {["name"] = "Spirit Bonding", ["skillset"] = {"metamorphosis"},  ["manualcommand"] = "bond spirit",},
+  ["splitmind"] = {["name"] = "Splitmind", ["skillset"] = {"kaido"},},
+  ["skywatch"] = {["name"] = "Skywatch", ["skillset"] = {"vision"},},
+  ["standingfirm"] = {["name"] = "Sturdiness", ["skillset"] = {"kaido", "shindo", "chivalry"},},
+  ["starburst"] = {["name"] = "Starburst", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch starburst",},
+  ["stealth"] = {["name"] = "Stealth", ["skillset"] = {"metamorphosis"},},
+  ["stonefist"] = {["name"] = "Stonefist", ["skillset"] = {"elementalism"},},
+  ["stoneskin"] = {["name"] = "Stoneskin", ["skillset"] = {"magi"},},
+  ["strata"] = {["name"] = "Strata", ["skillset"] = {"sculpting"},},
+  ["sulphur"] = {["name"] = "Sulphur", ["skillset"] = {"alchemy"},},
+  ["swiftcurse"] = {["name"] = "Swiftcurse", ["skillset"] = {"curses"},},
+  ["telesense"] = {["name"] = "Telesense", ["skillset"] = {"vision"},},
+  ["temperance"] = {["name"] = "Frost", ["skillset"] = {"curative"},},
+  ["tempest"] = {["name"] = "Tempest", ["skillset"] = {"duress"},},
+  ["tentacles"] = {["name"] = "Tentacles", ["skillset"] = {"occultism"},},
+  ["thermalshield"] = {["name"] = "Thermalshield", ["skillset"] = {"healing"},},
+  ["thirdeye"] = {["name"] = "Thirdeye", ["skillset"] = {"vision"},},
+  ["tin"] = {["name"] = "Tin", ["skillset"] = {"alchemy"},},
+  ["toughness"] = {["name"] = "Toughness", ["skillset"] = {"kaido", "shindo"},},
+  ["treewatch"] = {["name"] = "Treewatch", ["skillset"] = {"vision"},},
+  ["tremorsense"] = {["name"] = "Tremorsense", ["skillset"] = {"sculpting"},},
+  ["truestare"] = {["name"] = "Truestare", ["skillset"] = {"evileye"},},
+  ["tune"] = {["name"] = "Tune", ["skillset"] = {"voicecraft"},},
+  ["vengeance"] = {["name"] = "Vengeance", ["skillset"] = {"necromancy"},},
+  ["vigilance"] = {["name"] = "Vigilance", ["skillset"] = {"vision"},},
+  ["vigour"] = {["name"] = "Vigour", ["skillset"] = {"groves"},},
+  ["vitality"] = {["name"] = "Vitality", ["skillset"] = {"kaido", "metamorphosis"},},
+  --["viridian"] = {["name"] = "Viridian", ["skillset"] = {"sylvan"},},
+  ["waterwalking"] = {["name"] = "Waterwalking", ["skillset"] = {"shindo"},},
+  ["weathering"] = {["name"] = "Weathering", ["skillset"] = {"chivalry","kaido","shindo",},},
+  ["weaving"] = {["name"] = "Weaving", ["skillset"] = {"subterfuge"},},
+  ["wildgrowth"] = {["name"] = "Wildgrowth", ["skillset"] = {"groves"},},
+  ["willpowerblessing"] = {["name"] = "Willpower", ["skillset"] = {"healing"},},
+-- Animal spirits for spiritform
+  ["squirrel"] = {["name"] = "Squirrel", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("squirrel"),},
+  ["wildcat"] = {["name"] = "Wildcat", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wildcat"),},
+  ["wolf"] = {["name"] = "Wolf", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolf"),},
+  ["turtle"] = {["name"] = "Turtle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("turtle"),},
+  ["jackdaw"] = {["name"] = "Jackdaw", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jackdaw"),},
+  ["cheetah"] = {["name"] = "Cheetah", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("cheetah"),},
+  ["owl"] = {["name"] = "Owl", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("owl"),},
+  ["hyena"] = {["name"] = "Hyena", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("hyena"),},
+  ["condor"] = {["name"] = "Condor", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("condor"),},
+  ["gopher"] = {["name"] = "Gopher", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gopher"),},
+  ["sloth"] = {["name"] = "Sloth", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("sloth"),},
+  ["bear"] = {["name"] = "Bear", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("bear"),},
+  ["nightingale"] = {["name"] = "Nightingale", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("nightingale"),},
+  ["elephant"] = {["name"] = "Elephant", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("elephant"),},
+  ["wolverine"] = {["name"] = "Wolverine", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolverine"),},
+  ["jaguar"] = {["name"] = "Jaguar", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jaguar"),},
+  ["icewyrm"] = {["name"] = "Icewyrm", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("icewyrm"),},
+  ["eagle"] = {["name"] = "Eagle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("eagle"),},
+  ["gorilla"] = {["name"] = "Gorilla", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gorilla"),},
+  ["basilisk"] = {["name"] = "Basilisk", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("basilisk"),},
+}
+
+wsys.tb.defstripTable = {
+  ["aura of rebounding defence"] = "rebounding",
+  ["mastery of bladecraft"] = "blademastery",
+  ["standing firm"] = "standingfirm",
+  ["gripping"] = "gripping",
+  ["resistance"] = "resistance",
+  ["mercury"] = "mercury",
+  ["sulphur"] = "sulphur",
+  ["astronomy"] = "astronomy",
+  ["tin"] = "tin",
+  ["shroud"] = "shroud",
+  ["demonic armour"] = "demonarmour",
+  ["putrefaction"] = "putrefaction",
+  ["lifevision"] = "lifevision",
+  ["death aura"] = "deathaura",
+  ["vengeance"] = "vengeance",
+  ["truestare"] = "truestare",
+  ["songbird"] = "songbird",
+  ["balancing"] = "balancing",
+  ["aria"] = "aria",
+  ["Lay of distortion"] = "lay",
+  ["tune"] = "tune",
+  ["arrow catching"] = "arrowcatching",
+  ["acrobatics"] = "acrobatics",
+  ["Heart's Fury stance"] = "heartsfury",
+  ["Drunken Sailor stance"] = "drunkensailor",
+  ["mind net"] = "mindnet",
+  ["Shin Clarity"] = "shinclarity",
+  ["constitution"] = "constitution",
+  ["waterwalking"] = "waterwalking",
+  ["Shin Binding"] = "shinbinding",
+  ["projectiles"] = "projectiles",
+  ["consciousness"] = "consciousness",
+  ["Shin Trance"] = "shintrance",
+  ["dodging"] = "dodging",
+  ["weathering"] = "weathering",
+  ["toughness"] = "toughness",
+  ["slippery"] = "slippery",
+  ["diamondskin"] = "diamondskin",
+  ["stoneskin"] = "stoneskin",
+  ["reflections"] = "reflections",
+  ["stonefist"] = "stonefist",
+  ["chargeshield"] = "chargeshield",
+  ["split mind"] = "split mind",
+  ["pinchblock"] = "pinchblock",
+  ["regeneration"] = "regeneration",
+  ["hypersense"] = "hypersense",
+  ["mindcloak"] = "mindcloak",
+  ["kai boost"] = "kaiboost",
+  ["mind telesense"] = "mindtelesense",
+  ["evadeblock"] = "evadeblock",
+  ["trance"] = "kaitrance",
+  ["bodyblock"] = "bodyblock",
+  ["distorted aura"] = "distortedaura",
+  ["lifevision"] = "lifevision",
+  ["devilmark"] = "devilmark",
+  ["inspiration"] = "inspiration",
+  ["earth Spiritshield"] = "earthshield",
+  ["willpower"] = "willpowerblessing",
+  ["bedevilaura"] = "bedevilaura",
+  ["endurance"] = "enduranceblessing",
+  ["frost Spiritshield"] = "frostshield",
+  ["thermal Spiritshield"] = "thermalshield",
+  ["firstaid"] = "firstaid",
+  ["spirit bonding"] = "spiritbonded",
+  ["stealth"] = "stealth",
+  ["enhanced reflexes"] = "reflexes",
+  ["affinity"] = "affinity",
+  ["elusiveness"] = "elusiveness",
+  ["ghost"] = "ghost",
+  ["secondsight"] = "secondsight",
+  ["weaving of the cobra"] = "weaving",
+  ["hiding"] = "hiding",
+  ["lipreading"] = "lipreading",
+  ["scales of the serpent"] = "scales",
+  ["pacing"] = "pacing",
+  ["swiftcurse"] = "swiftcurse",
+  ["barkskin"] = "barkskin",
+  ["wild growth"] = "wildgrowth",
+  ["harmony"] = "harmony",
+  ["vigour"] = "vigour",
+  ["metawake"] = "metawake",
+  ["levitating"] = "levitating",
+  ["deafness"] = "deafness",
+  ["alertness"] = "alertness",
+  ["groundwatch"] = "groundwatch",
+  ["curseward"] = "curseward",
+  ["nightsight"] = "nightsight",
+  ["third eye"] = "thirdeye",
+  ["soft focusing"] = "softfocusing",
+  ["insulation"] = "insulation",
+  ["selfishness"] = "selfishness",
+  ["blindness"] = "blindness",
+  ["density"] = "density",
+  ["anti-weapon field"] = "rebounding",
+  ["kola"] = "kola",
+  ["belltattoo"] = "belltattoo",
+  ["skywatch"] = "skywatch",
+  ["hypersight"] = "hypersight",
+  ["telesense"] = "telesense",
+  ["vigilance"] = "vigilance",
+  ["mindseye"] = "mindseye",
+  ["temperance"] = "temperance",
+  ["fire resistance"] = "fireresist",
+  ["magic resistance"] = "magicresist",
+  ["deathsight"] = "deathsight",
+  ["electric resistance"] = "electricresist",
+  ["treewatch"] = "treewatch",
+  ["cloak"] = "cloak",
+  ["insomnia"] = "insomnia",
+  ["speed"] = "speed",
+  ["venom"] = "poisonresist",
+  ["clinging"] = "clinging",
+  ["shield"] = "shield",
+  --["scholasticism"] = " scholasticism",
+  ["firefly"] = "firefly",
+  ["held breath"] = "heldbreath",
+}
+
+</script>
+			<eventHandlerList />
+		</Script>
+	<Script isActive="yes" isFolder="no">
+			<name>def display</name>
+			<packageName></packageName>
+			<script>local menuClass = "dragon"
+
+-- define which classes have what skills
+local classSkills = {
+  ["air elemental lord"] = {"duress"},
+  ["alchemist"] = {"alchemy", "physiology"},
+  ["apostate"] = {"evileye", "necromancy", "apostasy"},
+  ["bard"] = {"swashbuckling", "voicecraft", "harmonics"},
+  ["blademaster"] = {"twoarts", "striking", "shindo"},
+  ["druid"] = {"druid", "metamorphosis", "groves"},
+  ["infernal"] = {"chivalry", "necromancy", "weaponmastery"},
+  ["earth elemental lord"] = {"sculpting"},
+  ["fire elemental lord"] = {"ignition"},
+  ["jester"] = {"pranks", "puppetry", "tarot"},
+  ["magi"] = {"magi", "elementalism", "crystalism"},
+  ["monk"] = {"tekura", "kaido", "telepathy"},
+  ["occultist"] = {"occultism", "domination", "tarot"},
+  ["paladin"] = {"chivalry", "devotion", "weaponmastery"},
+  ["priest"] = {"spirituality", "devotion", "healing"},
+  ["psion"] = {"weaving", "psionics", "emulation"},
+  ["runewarden"] = {"chivalry", "runelore", "weaponmastery"},
+  ["sentinel"] = {"woodlore", "metamorphosis"},
+  ["serpent"] = {"subterfuge", "hypnosis"},
+  ["shaman"] = {"curses", "vodun", "runelore"},
+  ["sylvan"] = {"sylvan", "groves", "elementalism"},
+  ["water elemental lord"] = {"pervasion"},
+  ["dragon"] = {"dragoncraft"},
+  ["free"] = {"curative", "survival", "vision", "enchantment", "tattoos"},
+  ["animalspirit"] = {"spiritform"},
+  ["artefact"] = {"artefact"}, 
+}
+
+function wsys.defupDisplay(style, profile, class)
+  if wsys.settings[style][profile][menuClass] == nil then
+    wsys.settings[style][profile][menuClass] = {}
+  end
+  local tableName = tostring(def)
+  local sortDefs = {}
+  local manaUse = {
+    "kaitrance", "shintrance", "projectiles", "dodging", "mindnet",
+    "reflexes", "groundwatch", "vigilance", "treewatch", "telesense",
+    "softfocusing", "skywatch", "hypersight", "alertness", "weaving",
+  }
+  local translations ={
+    kaitrance = "Kai Trance",
+    splitmind = "Split Mind"  ,
+    shintrance = "Shin Trance",
+    prismaticbarrier = "Prismatic Barrier",
+    electricResistance = "ElecResistance",
+  }
+  -- sort defs
+  for k,_ in pairs(wsys.tb.defenceTable) do
+    sortDefs[#sortDefs+1] = k
+  end
+  table.sort(sortDefs)
+
+  local x = 0
+  for i, n in ipairs(sortDefs) do
+    if wsys.classDefCheck(n, class) then
+      x = x + 1
+      local d = "&lt;dark_slate_gray&gt;[&lt;white&gt;"
+      if wsys.settings[style][profile][menuClass][n] then
+        if table.contains(manaUse, n) then
+          d = d .. "&lt;red&gt;M" -- uses mana
+        else
+          d = d .. "X"
+        end
+      else 
+        d = d .. " "
+      end
+      
+      d = d .. "&lt;dark_slate_gray&gt;] &lt;white&gt;"     
+
+      if (x-1)%3 == 0 then
+        echo("\n")
+      end 
+      cecho(d)
+      local nWithSpace = wsys.tb.defenceTable[n].name:title()
+      if translations[n] then
+        nWithSpace = translations[n]
+      end
+      if nWithSpace:len() &lt; 25 and (x-1)%3~=2 then
+        local pad = 25 - nWithSpace:len()
+        nWithSpace = nWithSpace .. string.rep(" ", pad)
+      elseif nWithSpace:len() &gt; 25 then
+        nWithSpace = nWithSpace:cut(25)
+      end
+      
+      fg("white") 
+      local command
+
+      if configuration == nil then
+        configuration = "initial"
+      end
+
+      local aliasthingy = "wconfig "..style.." "..profile.." "..menuClass.." "..n
+      local command = [[expandAlias("]]..aliasthingy..[[")]]
+      echoLink(nWithSpace, command, 
+        "Toggle defup of " .. n, true)
+      
+      
+      
+    end
+  end
+  echo("\n")
+end
+
+function wsys.classDefCheck(def, class)
+  local ans = false
+  for k,v in pairs(classSkills[class]) do
+    ans = ans or table.contains(wsys.tb.defenceTable[def]["skillset"], v)
+  end
+  return ans
+end
+
+function wsys.showDefMenu(style, profile ,class)
+  if class then
+    menuClass = string.lower(class)
+  else
+    menuClass = wsys.myClass()
+  end
+  wsys.report(string.title(style) .. " Configuration " .. profile .. " ("..menuClass..")")
+  wsys.report("Class Free Defs:")
+  wsys.defupDisplay(style, profile ,"free")
+  wsys.report(string.title(menuClass).." Defs:")
+  wsys.defupDisplay(style, profile, menuClass)
+  if wsys.myClass() == "sentinel" or wsys.myClass() == "druid" then
+    wsys.report("Metamorphosis animal spirits:")
+    wsys.defupDisplay(style, profile ,"animalspirit")
+  end
+  wsys.report("Artefacts:")
+  wsys.defupDisplay(style, profile, "artefact")
+end
+
+function wsys.defToggle(style, profile, class, defname)
+  if wsys.settings.defup[profile][class] == nil then
+    wsys.settings.defup[profile][class] = {}
+  end
+  if wsys.settings[style][profile][class][defname] ~= nil then
+    wsys.settings[style][profile][class][defname] = nil
+    wsys.report("Removed " .. defname .. " ("..wsys.tb.defenceTable[defname]["name"] ..") from " ..style.. " in " ..profile.." profile")
+    wsys.showDefMenu(style, profile, class)
+    -- spiritforms are not counted as defenses. So we cheat a little.
+    if wsys.tb.defenceTable[defname]["skillset"][1] ~= "spiritform" then 
+      send("curing priority defence " .. defname .. " reset", false)
+    end
+  else
+    wsys.settings[style][profile][class][defname] = true
+    wsys.report("Added " .. defname .. " ("..wsys.tb.defenceTable[defname]["name"] ..") to " ..style.. " in " ..profile.." profile")
+    wsys.showDefMenu(style, profile, class)
+    --add stuff to serverside keepup if this is displaying a keepup list.
+    --Unless it's a spiritform
+      if style == "keepup" and class == wsys.myClass() then
+        wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] or 25
+        -- let's not keep up a spiritform, it would cause too much trouble with the other defenses.
+        if wsys.tb.defenceTable[defname]["skillset"][1] ~= "spiritform" then 
+          wsys.enableSSDef( defname, wsys.settings.defprio[wsys.profile][wsys.myClass()][defname], true )
+        end
+      elseif style == "defup" and class == wsys.myClass() then
+        if not wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] then
+           wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = 25
+        end
+      end
+  end
+end
+
+function wsys.defprioDisplay()
+  --init local tables
+  local defpriolist = {}
+  local defpriolistvals = {}
+  local defpriolistsorted = {}
+
+  --make sure defprio table exists
+  if wsys.settings.defup[wsys.profile][wsys.myClass()] == nil then
+    wsys.settings.defup[wsys.profile][wsys.myClass()] = {}
+  end
+
+  --snag all defup defs
+  for k,v in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do
+    defpriolist[#defpriolist+1] = k
+  end
+  --snag all keepup defs
+  for k,v in pairs(wsys.settings.keepup[wsys.profile][wsys.myClass()]) do
+    defpriolist[#defpriolist+1] = k
+  end
+  --check if there's a defprio table, if not make it
+  if wsys.settings.defprio[wsys.profile][wsys.myClass()] == nil then
+    wsys.settings.defprio[wsys.profile][wsys.myClass()] = {}
+  end
+  --assign prio # to all defs (25 if not set)
+  for k,v in pairs(defpriolist) do
+    if wsys.settings.defprio[wsys.profile][wsys.myClass()][v] then
+      defpriolistvals[v] = wsys.settings.defprio[wsys.profile][wsys.myClass()][v]
+    else
+      defpriolistvals[v] = 25
+    end
+  end
+  --put defs in new list to be sorted
+  for index in pairs(defpriolistvals) do
+    defpriolistsorted[#defpriolistsorted+1] = index
+  end
+  --sort defs by #
+  table.sort(defpriolistsorted, function(a, b) return defpriolistvals[a] &lt; defpriolistvals[b] end)
+  
+  --display results
+  wsys.report("Defence Priority order:")
+  for k,v in ipairs(defpriolistsorted) do
+    cecho("\n&lt;white&gt;"..defpriolistvals[v] .. "&lt;dodger_blue&gt;:&lt;white&gt; " .. v)
+    local aliasone = "wconfig defprio " .. v .. " " .. defpriolistvals[v] - 1
+    local commandone = [[expandAlias("]]..aliasone..[[")]]
+    echo(" ")
+    echoLink("(-)", commandone, "Move 'up' " .. v, true)
+    echo(" ")
+    local aliastwo = "wconfig defprio " .. v .. " " .. defpriolistvals[v] + 1
+    local commandtwo = [[expandAlias("]]..aliastwo..[[")]]
+    echoLink("(+)", commandtwo, "Move 'down' " .. v, true)
+  end
+end
+
+function wsys.defprioset(def, prio)
+  if (tonumber(prio) &gt; 0) and (tonumber(prio) &lt; 26) then
+    wsys.settings.defprio[wsys.profile][wsys.myClass()][def] = prio
+    if wsys.settings.keepup[wsys.profile][wsys.myClass()][def] then
+      wsys.enableSSDef( def, prio, true )
+    end
+    wsys.report("Set " .. def .. " to " .. prio .. " priority.")
+  else
+    wsys.report("Cannot set a def lower than 1 or higher than 25 prio.")
+  end
+  wsys.defprioDisplay()
+end</script>
+			<eventHandlerList />
+		</Script>
+
+
 	</ScriptPackage>
 	<KeyPackage/>
 </MudletPackage>
